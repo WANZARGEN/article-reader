@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { BookOpen, Plus, Search, BarChart3 } from 'lucide-react'
 
 export default function HomePage() {
@@ -25,9 +26,9 @@ export default function HomePage() {
             <p className="text-gray-600 mb-4">
               URL, 파일 업로드 또는 텍스트로 새로운 아티클을 추가하세요
             </p>
-            <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+            <Link href="/articles/new" className="block w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-center">
               아티클 추가
-            </button>
+            </Link>
           </div>
 
           <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
