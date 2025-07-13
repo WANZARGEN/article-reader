@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { BookOpen, Plus, Search, BarChart3 } from 'lucide-react'
+import { colors, buttonStyles } from '@/components/ui/common'
+import { cn } from '@/lib/utils'
 
 export default function HomePage() {
   return (
@@ -26,8 +28,11 @@ export default function HomePage() {
             <p className="text-gray-600 mb-4">
               URL, 파일 업로드 또는 텍스트로 새로운 아티클을 추가하세요
             </p>
-            <Link href="/articles/new" className="block w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-center">
-              아티클 추가
+            <Link href="/articles/new" className="block">
+              <button className={cn(buttonStyles.base, buttonStyles.sizes.md, colors.secondary, "w-full shadow-lg hover:shadow-xl")}>
+                <Plus className="w-4 h-4" />
+                아티클 추가
+              </button>
             </Link>
           </div>
 
@@ -39,7 +44,8 @@ export default function HomePage() {
             <p className="text-gray-600 mb-4">
               저장된 아티클들을 카테고리별로 찾아보고 읽어보세요
             </p>
-            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className={cn(buttonStyles.base, buttonStyles.sizes.md, colors.primary, "w-full shadow-lg hover:shadow-xl")}>
+              <Search className="w-4 h-4" />
               아티클 보기
             </button>
           </div>
@@ -52,7 +58,8 @@ export default function HomePage() {
             <p className="text-gray-600 mb-4">
               읽기 진행률과 퀴즈 결과를 확인해보세요
             </p>
-            <button className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+            <button className={cn(buttonStyles.base, buttonStyles.sizes.md, colors.accent, "w-full shadow-lg hover:shadow-xl")}>
+              <BarChart3 className="w-4 h-4" />
               통계 보기
             </button>
           </div>
