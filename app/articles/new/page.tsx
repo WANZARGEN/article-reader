@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArticleForm } from '@/components/ArticleForm'
+import { colors } from '@/components/ui/common'
 
 export default function NewArticlePage() {
   const router = useRouter()
@@ -25,8 +26,12 @@ export default function NewArticlePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">새 아티클 추가</h1>
+          <p className="text-lg text-gray-600">URL, 파일, 또는 텍스트로 새로운 아티클을 추가하세요</p>
+        </div>
         <ArticleForm onSubmit={handleSubmit} isLoading={isLoading} />
       </div>
     </div>
